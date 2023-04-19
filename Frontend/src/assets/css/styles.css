@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+:root {
+  --header-height: 2rem;
+  --nav-width: 3rem;
+  --first-color: #ffffff;
+  --first-color-light: #2f2f2f;
+  --white-color: #212121;
+  --body-font: "Nunito", sans-serif;
+  /* --body-font: "Nunito", sans-serif; */
+  --normal-font-size: 1rem;
+  --movil-font-size: 0.7rem;
+  --z-fixed: 100;
+}
+
+/* -------------------------- */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+
+  background-color: #e0e0e0;
+}
+.nav {
+  margin-top: 10px;
+  /* height: 60%; */
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.nav_logo {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding-left: 1rem;
+  /* padding: 0.5rem 0 2rem 1rem; */
+}
+.nav_link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+.nav_logo-icon {
+  font-size: 1.25rem;
+  /* color: var(--white-color); */
+  /* color: #f3f3f3; */
+}
+.nav_logo-name {
+  /* color: var(--white-color); */
+  /* color: #f3f3f3; */
+  font-weight: 300;
+}
+.nav_link {
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 0.2rem;
+  transition: 0.3s;
+}
+.nav_link:hover {
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+  color: #0a58ca;
+  font-size: 15px;
+  width: calc(var(--nav-width) + 7rem);
+  /* background-color: #f4f3ef; */
+  border-radius: 10px 0px 0px 10px;
+  transition: 0.3s;
+  font-weight: bold;
+  border-color: #20222a;
+  font-weight: 700;
+}
+.nav_icon {
+  font-size: 1.25rem;
+}
+.active {
+  color: #0a58ca;
+}
+.active::before {
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+.img-zoom:hover {
+  transform: scale(3);
+  transition: 0.2s;
+}
+
+.hover-card {
+  transition: 0.3s;
+}
+.hover-card:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+  width: calc(var(--nav-width) + 7rem);
+}
+
+.table-responsive {
+  max-height: 450px;
+}
+
+.nav_icon:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+  width: calc(var(--nav-width) + 7rem);
+  font-size: 1.25rem;
+}
+
+@media print {
+  #divcredencial {
+    transform: scale(0.6);
+    transform-origin: top left;
+  }
+}
+
+/* -------------------------- */
+
+/* menu  Celulares */
+@media only screen and (max-width: 768px) {
+  .header {
+    border-bottom: 2px solid rgb(199, 199, 199);
+    z-index: 1;
+    width: 100vw;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    position: fixed;
+  }
+  .l-navbar {
+    z-index: 1;
+
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    margin-top: 50px;
+    width: calc(var(--nav-width) + 6rem);
+    background-color: #e0e0e0;
+    transition: 0.5s;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+
+  .shownav {
+    transition: 0.5s;
+    width: 0%;
+  }
+  .main-pd {
+    padding-top: 4rem;
+    transition: 0.5s;
+  }
+  .main-pd2 {
+    padding-top: 4rem;
+    transition: 0.5s;
+  }
+  .textoof {
+    display: none;
+  }
+}
+
+/* -------------------------- */
+
+/* CSS  Computadora */
+@media screen and (min-width: 768px) {
+  .header {
+    border-bottom: 2px solid rgb(199, 199, 199);
+    z-index: 1;
+    width: 100vw;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    position: fixed;
+  }
+  .l-navbar {
+    z-index: 1;
+    transition: 0.3s;
+    margin-top: 50px;
+    width: var(--nav-width);
+    height: 100vh;
+    position: fixed;
+
+    background-color: #e0e0e0;
+
+    /* box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.15); */
+  }
+
+  .l-navbar:hover {
+    width: calc(var(--nav-width) + 7rem);
+    z-index: 1;
+    background-color: #e0e0e0;
+    transition: 0.3s;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+
+  .shownav {
+    width: calc(var(--nav-width) + 7rem);
+  }
+  .div-pad {
+    padding-top: 4rem;
+  }
+  .main-pd {
+    padding-right: 1rem;
+    padding-left: calc(var(--nav-width) + 8rem);
+    transition: 0.5s;
+  }
+  .main-pd2 {
+    padding-top: 4rem;
+    padding-right: 1rem;
+    padding-left: calc(var(--nav-width) + 1rem);
+    transition: 0.5s;
+  }
+}
